@@ -1,0 +1,202 @@
+/* ================== PALETA DE COLORES ================== */
+:root {
+    --blanco: #FFFFFF;
+    --negro: #000000;
+    --verde: #27E1C1;
+    --azul: #6271F9;
+    --verde-oscuro: #28C7AC;
+    --azul-oscuro: #4454E2;
+    --amarillo: #FDB827;
+    --gris-claro: #F2F5F6;
+    --lila: #E8DAF8;
+    --azul-claro: #D4F1FF;
+}
+
+/* ================== BASE ================== */
+html {
+    font-size: 62.5%;
+}
+
+
+
+/* ================== HEADER ================== */
+header {
+    background-color: var(--negro);
+    color: var(--blanco);
+    text-align: center;
+    padding: 2rem;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 3.5rem;
+}
+
+/* ================== NAV ================== */
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    background-color: var(--verde);
+    padding: 1rem;
+    border-radius: 8px;
+    margin: 2rem 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--negro);
+    font-weight: bold;
+    padding: 0.5rem 1.2rem;
+    transition: .3s;
+}
+
+nav a:hover {
+    background-color: var(--verde-oscuro);
+    color: var(--blanco);
+    border-radius: 5px;
+}
+
+/* ================== TITULOS ================== */
+
+
+/* ================== SECCIONES ================== */
+section {
+    margin-bottom: 3rem;
+}
+
+/* ================== INFO BOX ================== */
+.info-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.info-box {
+    border: 2px solid var(--verde-oscuro);
+    border-radius: 10px;
+    padding: 20px;
+    width: 400px;
+    background-color: var(--blanco);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* ================== TICKETS ================== */
+.ticket-box {
+    border: 2px solid var(--azul);
+    border-radius: 10px;
+    padding: 20px;
+    width: 400px;
+    background-color: var(--azul-claro);
+    margin-bottom: 1rem;
+}
+
+.ticket-box.yellow {
+    background-color: var(--amarillo);
+}
+
+.ticket-box.closed {
+    background-color: var(--gris-claro);
+}
+
+.ticket-box a {
+    text-decoration: none;
+    color: var(--azul-oscuro);
+    font-weight: bold;
+}
+
+/* ================== BOTON ================== */
+.btn-descargar {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--azul);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.btn-descargar:hover {
+    background-color: var(--azul-oscuro);
+}
+
+/* ===================================================== */
+/* ================= SLIDER RESPONSIVE ================= */
+/* ===================================================== */
+
+.slider-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 25px 0;
+}
+
+/* AREA DESLIZABLE */
+.slider {
+    display: flex;
+    overflow-x: auto;
+    gap: 14px;
+    width: min(92%, 900px);
+    padding: 10px;
+    scroll-behavior: smooth;
+}
+
+/* ocultar scrollbar */
+.slider::-webkit-scrollbar {
+    display: none;
+}
+
+/* ===== IMÁGENES (TAMAÑO CONTROLADO REAL) ===== */
+.slide-img{
+    flex:0 0 auto;
+
+    width:280px;
+    max-width:80vw;
+    height:auto;
+
+    border-radius:18px;
+
+    object-fit:contain;   /* 👈 NO recorta */
+    background:white;     /* evita espacios feos si la imagen no llena */
+
+    box-shadow:0 6px 18px rgba(0,0,0,0.15);
+    transition:.3s;
+}
+/* efecto hover */
+.slide-img:hover {
+    transform: scale(1.05);
+}
+
+/* FLECHAS */
+.flecha {
+    border: none;
+    background: white;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 8px 12px;
+    border-radius: 50%;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+
+    .slider {
+        width: 95%;
+        gap: 10px;
+    }
+
+    .slide-img {
+        width: 70vw;
+        height: 40vw;
+    }
+
+    .flecha {
+        font-size: 16px;
+        padding: 6px 10px;
+    }
+}
