@@ -1,4 +1,3 @@
-
 console.log("🔌 iniciando manager.js...");
 
 /* =========================
@@ -51,7 +50,7 @@ socket.on("nuevo_ticket", function(data){
         });
 
         n.onclick = function(){
-            window.open("/soporte/ticket/" + data.ticket_id);
+            window.location.href = window.location.origin + "/soporte/ticket/" + data.ticket_id;
         };
 
     }
@@ -75,19 +74,15 @@ socket.on("mensaje_ticket", function(data){
         });
 
         if(data.tipo === "soporte"){
-
             /* soporte respondió -> ejecutivo abre ticket */
             n.onclick = function(){
-                window.open("/ticket/" + data.ticket_id);
+                window.location.href = window.location.origin + "/ticket/" + data.ticket_id;
             };
-
         }else{
-
             /* ejecutivo respondió -> soporte abre ticket */
             n.onclick = function(){
-                window.open("/soporte/ticket/" + data.ticket_id);
+                window.location.href = window.location.origin + "/soporte/ticket/" + data.ticket_id;
             };
-
         }
 
     }
@@ -111,17 +106,19 @@ socket.on("estatus_ticket", function(data){
         });
 
         n.onclick = function(){
-            window.open("/ticket/" + data.ticket_id);
+            window.location.href = window.location.origin + "/ticket/" + data.ticket_id;
         };
 
     }
 
 });
 
+
+/* =========================
+   ACTUALIZAR VISTA
+========================= */
+
 socket.on("actualizar_vista", function(){
-
     console.log("🔄 actualizando vista");
-
     location.reload();
-
 });
